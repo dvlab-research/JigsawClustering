@@ -1,0 +1,43 @@
+_BASE_: "Base-RCNN-FPN.yaml"
+OUTPUT_DIR: outputs/jigclu_det_coco
+MODEL:
+  BACKBONE:
+    NAME: "build_resnet_fpn_backbone"
+    FREEZE_AT: 0
+  WEIGHTS: "detection/jigclu_det.pth"
+  RESNETS:
+    STRIDE_IN_1X1: False
+    OUT_FEATURES: ["res2", "res3", "res4", "res5"]
+    DEPTH: 50
+    NORM: "SyncBN"
+  FPN:
+    IN_FEATURES: ["res2", "res3", "res4", "res5"]
+    NORM: "SyncBN"
+  ROI_BOX_HEAD:
+    NAME: "FastRCNNConvFCHead"
+    NUM_CONV: 4
+    NUM_FC: 1
+    NORM: "SyncBN"
+
+  PROPOSAL_GENERATOR:
+    NAME: "RPN"
+  RPN:
+    PRE_NMS_TOPK_TEST: 6000
+    POST_NMS_TOPK_TEST: 1000
+  PIXEL_MEAN: [123.675, 116.280, 103.530]
+  PIXEL_STD: [58.395, 57.120, 57.375]
+INPUT:
+  FORMAT: "RGB"
+
+TEST:
+  PRECISE_BN:
+    ENABLED: True
+
+SOLVER:
+  IMS_PER_BATCH: 8
+  BASE_LR: 0.01
+  MAX_ITER: 180000
+  STEPS:
+  - 120000
+  - 160000
+
