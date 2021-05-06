@@ -56,7 +56,16 @@ datasets
 ```
 
 ## Results and pretrained model
-Comming soon.
+The pretrained weights is available at [here](https://github.com/akuxcw/storage/raw/master/JigClu_200e.pth).
+
+| Task                | Dataset  | Results |
+|---------------------|----------|---------|
+| Linear Evaluation   | ImageNet | 66.4    |
+| Semi-Supervised 1%  | ImageNet | 40.7    |
+| Semi-Supervised 10% | ImageNet | 63.0    |
+| Detection           | COCO     | 39.3    |
+
+
 
 ## Training
 
