@@ -56,7 +56,7 @@ datasets
 ```
 
 ## Results and pretrained model
-The pretrained weights is available at [here](https://github.com/akuxcw/storage/raw/master/JigClu_200e.pth).
+The pretrained model is available at [here](https://github.com/akuxcw/storage/raw/master/JigClu_200e.pth).
 
 | Task                | Dataset  | Results |
 |---------------------|----------|---------|
