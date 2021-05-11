@@ -56,7 +56,7 @@ datasets
 ```
 
 ## Results and pretrained model
-The pretrained model is available at [here](https://drive.google.com/file/d/1_TyLacC9EcOIoC9uvRQ8dMXGXpXOO_R1/view?usp=sharing).
+The pretrained model is available at [here](https://github.com/Jia-Research-Lab/JigsawClustering/releases/download/1.0/JigClu_200e.pth).
 
 | Task                | Dataset  | Results |
 |---------------------|----------|---------|
